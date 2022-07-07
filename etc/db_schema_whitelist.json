@@ -1,0 +1,14 @@
+{
+    "slot_configuration": {
+        "column": {
+            "id": true,
+            "start_time": true,
+            "end_time": true,
+            "week_days": true,
+            "max_quantity": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

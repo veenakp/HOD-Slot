@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package HOD_Slot
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="HOD_Slot::slot" title="Slot Management" module="HOD_Slot" sortOrder="51" resource="HOD_Slot::slot"/>
+        <add id="HOD_Slot::config" title="Slot Configuration" module="HOD_Slot" sortOrder="10" action="config/index/index" resource="HOD_Slot::config" parent="HOD_Slot::slot"/>
+        <add id="HOD_Slot::slots" title="Slot Management" module="HOD_Slot" sortOrder="99" parent="HOD_Slot::slot" action="config/addslot/index" resource="HOD_Slot::slots"/>
+    </menu>
+</config>

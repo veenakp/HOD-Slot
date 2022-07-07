@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package HOD_Slot
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <preference for="HOD\Slot\Api\Data\SlotInterface"
+            type="HOD\Slot\Model\Slot"/>
+    <preference for="HOD\Slot\Api\SlotRepositoryInterface"
+            type="HOD\Slot\Model\SlotRepository"/>
+    <preference for="HOD\Slot\Api\Data\SlotSearchResultInterface"
+            type="Magento\Framework\Api\SearchResults"/>
+   <virtualType name="blockGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>   
+	 <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="config_listing_data_source" xsi:type="string">HOD\Slot\Model\ResourceModel\Slot\Grid\Collection</item>
+            </argument>
+       </arguments>
+   </type>
+   <virtualType name="HOD\Slot\Model\ResourceModel\Slot\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">slot_configuration</argument>
+            <argument name="resourceModel" xsi:type="string">HOD\Slot\Model\ResourceModel\Slot</argument>
+        </arguments>
+    </virtualType> 
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="slot_listing_data_source" xsi:type="string">HOD\Slot\Model\ResourceModel\Addslot\Grid\Collection</item>
+            </argument>
+       </arguments>
+   </type>
+    <virtualType name="HOD\Slot\Model\ResourceModel\Addslot\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cron_slot</argument>
+            <argument name="resourceModel" xsi:type="string">HOD\Slot\Model\ResourceModel\Addslot</argument>
+        </arguments>
+    </virtualType> 
+</config>

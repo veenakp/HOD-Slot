@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package HOD_Slot
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="slot_configuration" resource="default" engine="innodb" comment="Slot Configuration">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" padding="10" identity="true" comment="Slot Configuration Id"/>
+        <column xsi:type="datetime" name="start_time" comment="Start Time"/>
+        <column xsi:type="datetime" name="end_time" comment="End Time"/>
+        <column xsi:type="varchar" name="week_days" nullable="false" length="200" comment="Week Days"/>
+        <column xsi:type="int" name="max_quantity" unsigned="true" nullable="false" padding="12" comment="Mazimum Quantity"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+    <table name="cron_slot" resource="default" engine="innodb" comment="Slot Management">
+        <column xsi:type="int" name="slot_id" unsigned="true" nullable="false" padding="10" identity="true" comment="Slot Management Id"/>
+        <column xsi:type="datetime" name="start" comment="Start Time"/>
+        <column xsi:type="datetime" name="end" comment="End Time"/>
+        <column xsi:type="int" name="max_qty" unsigned="true" nullable="false" padding="12" comment="Mazimum Quantity"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="slot_id"/>
+        </constraint>
+    </table>
+</schema>
