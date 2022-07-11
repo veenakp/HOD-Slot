@@ -11,6 +11,13 @@
             type="HOD\Slot\Model\SlotRepository"/>
     <preference for="HOD\Slot\Api\Data\SlotSearchResultInterface"
             type="Magento\Framework\Api\SearchResults"/>
+            
+    <preference for="HOD\Slot\Api\Data\AddslotInterface"
+            type="HOD\Slot\Model\Addslot"/>
+    <preference for="HOD\Slot\Api\AddslotRepositoryInterface"
+            type="HOD\Slot\Model\AddslotRepository"/>
+    <preference for="HOD\Slot\Api\Data\AddslotSearchResultInterface"
+            type="Magento\Framework\Api\SearchResults"/>        
    <virtualType name="blockGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">

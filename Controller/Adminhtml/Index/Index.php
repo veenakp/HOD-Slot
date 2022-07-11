@@ -57,6 +57,9 @@ class Index extends \Magento\Backend\App\Action
         return $resultPage;
     }
 
+    /**
+     * Authorization
+     */
     protected function _isAllowed()
     {
         return $this->_authorization->isAllowed('HOD_Slot::config');

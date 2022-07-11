@@ -19,7 +19,7 @@ use HOD\Slot\Model\ResourceModel\Addslot\CollectionFactory;
 use HOD\Slot\Model\AddslotFactory;
 use HOD\Slot\Api\Data\AddslotInterface;
 use HOD\Slot\Model\ResourceModel\Addslot;
-use HOD\Slot\Api\Data\addslotInterfaceFactory;
+use HOD\Slot\Api\Data\AddslotInterfaceFactory;
 
 class AddslotRepository implements \HOD\Slot\Api\AddslotRepositoryInterface
 {

@@ -26,6 +26,7 @@ class DataProvider extends AbstractDataProvider
      * @var LoadData
      */
     private $loadedData;
+    
     /**
      * @param string            $name
      * @param string            $primaryFieldName
@@ -39,13 +40,11 @@ class DataProvider extends AbstractDataProvider
         $primaryFieldName,
         $requestFieldName,
         CollectionFactory $slotFactory,
-        StoreManagerInterface $storeManager,
         array $meta = [],
         array $data = []
     ) {
-        $this->slotFactory = $slotFactory;
-        $this->collection = $this->slotFactory->create();
-        $this->storeManager = $storeManager;
+        $this->addslotFactory = $addslotFactory;
+        $this->collection = $this->addslotFactory->create();
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
